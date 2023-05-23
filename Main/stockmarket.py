@@ -33,7 +33,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2,random_s
 
 
 """ DATA MINING """
-# Vẽ biểu đồ giá cổ phiếu theo thời gian bằng Seaborn
+# Vẽ biểu đồ giá cổ phiếu theo thời gian bằng Seaborn(1.png)
 sns.lineplot(x='Date', y='Close', data=df)
 plt.xlabel('Date')
 plt.ylabel('Close Price')
@@ -43,7 +43,7 @@ plt.show()
 # Tính toán đường trung bình động trong 30 ngày
 rolling_avg = df['Close'].rolling(window=30).mean()
 
-# Vẽ biểu đồ giá cổ phiếu và đường trung bình động bằng Seaborn
+# Vẽ biểu đồ giá cổ phiếu và đường trung bình động bằng Seaborn(2.png)
 df['30-day Moving Average'] = rolling_avg
 sns.lineplot(x='Date', y='Close', data=df, label='Close Price')
 sns.lineplot(x='Date', y='30-day Moving Average', data=df, label='30-day Moving Average')
@@ -53,7 +53,7 @@ plt.title('Historical Stock Prices')
 plt.legend()
 plt.show()
 
-# Vẽ biểu đồ khối lượng giao dịch bằng Seaborn
+# Vẽ biểu đồ khối lượng giao dịch bằng Seaborn(3.png)
 sns.barplot(x='Date', y='Volume', data=df)
 plt.xlabel('Date')
 plt.ylabel('Volume')
@@ -78,7 +78,7 @@ avg_loss = loss.rolling(window=14).mean()
 rs = avg_gain / avg_loss
 df['RSI'] = 100 - (100 / (1 + rs))
 
-# Vẽ biểu đồ giá cổ phiếu và các chỉ số kỹ thuật tương ứng
+# Vẽ biểu đồ giá cổ phiếu và các chỉ số kỹ thuật tương ứng(4.png)
 fig, ax = plt.subplots()
 ax.plot(df['Date'], df['Close'], label='Close Price')
 ax.plot(df['Date'], df['30-day Moving Average'], label='30-day Moving Average')
