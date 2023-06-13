@@ -8,7 +8,7 @@ from sklearn.metrics import mean_squared_error
 
 
 # Đọc dữ liệu từ file csv
-df = pd.read_csv(r'D:\Users\ADMIN\Downloads\TITAN.csv')
+df = pd.read_csv('stockdata.csv')
 
 
 """ CLEANING """
@@ -97,7 +97,7 @@ plt.show()
 
 """ MODELING """
 # Chuẩn bị dữ liệu
-df = pd.read_csv(r'D:\Users\ADMIN\Downloads\TITAN.csv')
+df = pd.read_csv('stockdata.csv')
 df['Close'] = df['Close'].astype(float) 
 df.index = pd.to_datetime(df['Date'])
 df = df.resample('D').ffill()
